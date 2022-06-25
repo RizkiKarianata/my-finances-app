@@ -1,0 +1,81 @@
+<template>
+	<div class="page">
+		<div class="navbar">
+			<div class="navbar-bg"></div>
+			<div class="navbar-inner sliding">
+				<div class="left"></div>
+				<div class="title">Crossword Puzzle</div>
+			</div>
+		</div>
+		<div class="page-content">
+			<div class="list no-hairlines-md">
+				<ul>
+					<li class="item-content item-input">
+						<div class="item-media">
+							<i class="icon demo-list-icon"></i>
+						</div>
+						<div class="item-inner">
+							<div class="item-title item-label">Kata Kunci</div>
+							<div class="item-input-wrap">
+								<input type="text" placeholder="Kata Kunci" name="kata_kunci" id="kata_kunci" autocomplete="off" />
+								<span class="input-clear-button"></span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="block">
+				<div class="row">
+					<button class="col button button-large button-raised" @click="results">Lihat Jawaban</button>
+				</div>
+			</div>
+			<div class="list">
+				<ul>
+					{{#each data}}
+					<li>
+						<a href="" class="item-link item-content">
+							<div class="item-inner">
+								<div class="item-title">
+									<div class="item-header">Kesulitan: {{this.stars}}</div>Jawaban: {{this.word}}<div class="item-footer">Clue: {{this.clue}}</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					{{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
+</template>
+<script>
+	export default{
+		mounted() {
+			var $this = this;
+			var app = this.$app;
+			var $$ = this.$$;
+			var self = this;
+		},
+		methods: {
+			results: function() {
+				var $this = this;
+				var app = this.$app;
+				var $$ = this.$$;
+				var self = this;
+				var response = new Array();
+
+				var kata_kunci = $$('#kata_kunci').val();
+
+				if(kata_kunci == "") {
+					app.dialog.alert("Kata Kunci tidak boleh kosong", 'Peringatan')
+				}else {
+					app.request.get('https://kunci-tts-api.vercel.app/api/answers?question='+kata_kunci, (data, status, xhr) => {
+						response = JSON.parse(data);
+						self.$setState({
+							data: response.answers
+						});
+					});
+				}
+			}  
+		}
+	}
+</script>
