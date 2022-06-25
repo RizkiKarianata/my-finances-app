@@ -1,49 +1,146 @@
 <template>
-	<div class="page">
-		<div class="navbar">
-			<div class="navbar-bg"></div>
-			<div class="navbar-inner sliding">
-				<div class="left"></div>
-				<div class="title">Crossword Puzzle</div>
-			</div>
-		</div>
-		<div class="page-content">
-			<div class="list no-hairlines-md">
-				<ul>
-					<li class="item-content item-input">
-						<div class="item-media">
-							<i class="icon demo-list-icon"></i>
+	<div class="page page-home page-with-subnavbar no-navbar">
+		<div class="page-content" style="padding-top: 0px;">
+			<div class="title-apps padding-middle background-primer">
+				<div class="container">
+					<div class="row row-no-margin-bottom">
+						<div class="col">
+							<h3 class="color-white">My Finances App</h3>
 						</div>
-						<div class="item-inner">
-							<div class="item-title item-label">Kata Kunci</div>
-							<div class="item-input-wrap">
-								<input type="text" placeholder="Kata Kunci" name="kata_kunci" id="kata_kunci" autocomplete="off" />
-								<span class="input-clear-button"></span>
-							</div>
+						<div class="col">
+							<a href="/notification/">
+								<span class="icon-middle margin-left-small float-right color-white">
+									<i class="fas fa-user-circle"></i>
+								</span>
+							</a>
 						</div>
-					</li>
-				</ul>
-			</div>
-			<div class="block">
-				<div class="row">
-					<button class="col button button-large button-raised" @click="results">Lihat Jawaban</button>
+					</div>
 				</div>
 			</div>
-			<div class="list">
-				<ul>
-					{{#each data}}
-					<li>
-						<a href="" class="item-link item-content">
-							<div class="item-inner">
-								<div class="item-title">
-									<div class="item-header">Kesulitan: {{this.stars}}</div>Jawaban: {{this.word}}<div class="item-footer">Clue: {{this.clue}}</div>
+			<div class="border-radius-style background-circle background-primer">
+				<div class="container">
+					<div class="background-white border-radius padding-box-middle box-shadow">
+						<div class="row row-no-margin-bottom">
+							<div class="col-60">
+								<div class="float-left margin-right-small">
+									<img class="people" src="static/images/avatar-5.png" alt="">
+								</div>
+								<div class="overflow-hidden">
+									<h6>Rizki Karianata</h6>
+									<small>Administrator</small/>
 								</div>
 							</div>
-						</a>
-					</li>
-					{{/each}}
-				</ul>
+							<div class="col-40">
+								<button class="buttons float-right letter-spacing margin-top-small">7.500.000</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
+			<div class="separator"></div>
+			<div class="menus">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<a href="/withdraw/">
+								<div class="background-white text-center border-radius padding-box box-shadow">
+									<span class="icon-big icon-color-green"><i class="fa fa-arrow-alt-circle-down"></i></span>
+									<h6 class="font-weight-500">Pemasukan</h6>
+								</div>
+							</a>
+						</div>
+						<div class="col">
+							<a href="/transfer/">
+								<div class="background-white text-center border-radius padding-box box-shadow">
+									<span class="icon-big icon-color-red"><i class="fa fa-history"></i></span>
+									<h6 class="font-weight-500">Histori</h6>
+								</div>
+							</a>
+						</div>
+						<div class="col">
+							<a href="/voucher/">
+								<div class="background-white text-center border-radius padding-box box-shadow">
+									<span class="icon-big icon-color-purple"><i class="fa fa-arrow-alt-circle-up"></i></span>
+									<h6 class="font-weight-500">Pengeluaran</h6>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="separator-small"></div>
+			<div class="history margin-pages2" style="margin-top: 25px;">
+				<div class="container">
+					<h5 class="margin-bottom-small">March</h5>
+					<div class="background-white box-shadow border-radius padding-box-middle">
+						<div class="float-left margin-right-middle">
+							<span class="icon-big icon-color-green">
+								<i class="fa fa-wallet"></i>
+							</span>
+						</div>
+						<div class="overflow-hidden">
+							<span>20 March 2020</span>
+							<h6 class="margin-bottom-5px">Deposit</h6>
+							<h4>$350</h4>
+						</div>
+					</div>
+					<div class="separator-small"></div>
+					<div class="background-white box-shadow border-radius padding-box-middle">
+						<div class="float-left margin-right-middle">
+							<span class="icon-big icon-color-pink">
+								<i class="fa fa-donate"></i>
+							</span>
+						</div>
+						<div class="overflow-hidden">
+							<span>05 March 2020</span>
+							<h6 class="margin-bottom-5px">Donation to <span><a href="" class="color-primer">Health Foundation</a></span></h6>
+							<h4>$50</h4>
+						</div>
+					</div>
+					<div class="separator-small"></div>
+					<h5 class="margin-bottom-small">February</h5>
+					<div class="background-white box-shadow border-radius padding-box-middle">
+						<div class="float-left margin-right-middle">
+							<span class="icon-big icon-color-yellow">
+								<i class="fa fa-lightbulb"></i>
+							</span>
+						</div>
+						<div class="overflow-hidden">
+							<span>22 February 2020</span>
+							<h6 class="margin-bottom-5px">Electricity</h6>
+							<h4>$25</h4>
+						</div>
+					</div>
+					<div class="separator-small"></div>
+					<div class="background-white box-shadow border-radius padding-box-middle">
+						<div class="float-left margin-right-middle">
+							<span class="icon-big icon-color-purple">
+								<i class="fa fa-arrow-alt-circle-down"></i>
+							</span>
+						</div>
+						<div class="overflow-hidden">
+							<span>18 February 2020</span>
+							<h6 class="margin-bottom-5px">Withdraw</h6>
+							<h4>$100</h4>
+						</div>
+					</div>
+					<div class="separator-small"></div>
+					<div class="background-white box-shadow border-radius padding-box-middle">
+						<div class="float-left margin-right-middle">
+							<span class="icon-big icon-color-red">
+								<i class="fa fa-redo"></i>
+							</span>
+						</div>
+						<div class="overflow-hidden">
+							<span>11 February 2020</span>
+							<h6 class="margin-bottom-5px">Transfer to <span><a href="" class="color-primer">@johndoe66</a></span></h6>
+							<h4>$30</h4>
+						</div>
+					</div>
+					<div class="separator"></div>
+				</div>
+			</div>
+			<div class="separator-bottom"></div>
 		</div>
 	</div>
 </template>
@@ -54,28 +151,6 @@
 			var app = this.$app;
 			var $$ = this.$$;
 			var self = this;
-		},
-		methods: {
-			results: function() {
-				var $this = this;
-				var app = this.$app;
-				var $$ = this.$$;
-				var self = this;
-				var response = new Array();
-
-				var kata_kunci = $$('#kata_kunci').val();
-
-				if(kata_kunci == "") {
-					app.dialog.alert("Kata Kunci tidak boleh kosong", 'Peringatan')
-				}else {
-					app.request.get('https://kunci-tts-api.vercel.app/api/answers?question='+kata_kunci, (data, status, xhr) => {
-						response = JSON.parse(data);
-						self.$setState({
-							data: response.answers
-						});
-					});
-				}
-			}  
 		}
 	}
 </script>
