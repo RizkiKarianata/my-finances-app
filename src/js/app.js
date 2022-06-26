@@ -23,7 +23,6 @@ var app = new Framework7({
   theme: 'auto', // Automatic theme detection
 
 
-
   // App routes
   routes: routes,
 
